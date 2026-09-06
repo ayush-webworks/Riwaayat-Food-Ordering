@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Riwayaat | Premium Food & Dining</title>
+    <meta
+        name="description"
+        content="Riwayaat is a premium food ordering and dining experience with delicious dishes, easy ordering and a beautiful modern interface."
+    >
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+
+            <a href="#home" class="logo">
+                <span class="logo-mark">R</span>
+                <span class="logo-text">
+                    Riwayaat
+                    <small>FOOD & DINING</small>
+                </span>
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#about" class="nav-link">Our Story</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+
+                <button class="icon-btn" id="searchBtn" aria-label="Search">
+                    🔍
+                </button>
+
+                <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ================= SEARCH OVERLAY ================= -->
+    <div class="search-overlay" id="searchOverlay">
+
+        <button class="search-close" id="searchClose" aria-label="Close search">
+            ✕
+        </button>
+
+        <div class="search-box">
+            <span>⌕</span>
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search your favourite food..."
+                autocomplete="off"
+            >
+        </div>
+
+        <div class="search-results" id="searchResults"></div>
+
+    </div>
+
+
+    <!-- ================= HERO ================= -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-bg-shape"></div>
+
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+                        ✦ AUTHENTIC TASTE • MODERN EXPERIENCE
+                    </p>
+
+                    <h1>
+                        Food that
+                        <span>feels like home.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Discover delicious flavours, beautifully prepared
+                        dishes and an experience worth coming back to.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#menu" class="btn btn-primary">
+                            Explore Menu
+                            <span>→</span>
+                        </a>
+
+                        <a href="#about" class="btn btn-secondary">
+                            Our Story
+                        </a>
+
+                    </div>
+
+                    <div class="hero-info">
+
+                        <div class="hero-info-item">
+                            <strong>4.9/5</strong>
+                            <span>Customer Rating</span>
+                        </div>
+
+                        <div class="hero-divider"></div>
+
+                        <div class="hero-info-item">
+                            <strong>18+</strong>
+                            <span>Signature Dishes</span>
+                        </div>
+
+                        <div class="hero-divider"></div>
+
+                        <div class="hero-info-item">
+                            <strong>30 min</strong>
+                            <span>Average Delivery</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hero Food Visual -->
+                <div class="hero-visual">
+
+                    <div class="hero-circle"></div>
+
+                    <div class="floating-card card-rating">
+                        <span>★</span>
+                        <div>
+                            <strong>4.9</strong>
+                            <small>Excellent taste</small>
+                        </div>
+                    </div>
+
+                    <div class="food-placeholder">
+                        <div class="food-placeholder-inner">
+                            <span>🍽️</span>
+                            <p>Freshly Prepared</p>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-fresh">
+                        <span>✦</span>
+                        <div>
+                            <strong>100%</strong>
+                            <small>Fresh Ingredients</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+        <section class="features">
+
+            <div class="container features-grid">
+
+                <div class="feature">
+                    <div class="feature-icon">✦</div>
+                    <div>
+                        <h3>Fresh Ingredients</h3>
+                        <p>Selected with care</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">♨</div>
+                    <div>
+                        <h3>Made Fresh</h3>
+                        <p>Prepared when you order</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">⌁</div>
+                    <div>
+                        <h3>Fast Delivery</h3>
+                        <p>Hot at your doorstep</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">♥</div>
+                    <div>
+                        <h3>Made With Love</h3>
+                        <p>Every bite matters</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MENU ================= -->
+        <section class="menu-section" id="menu">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="eyebrow">OUR MENU</p>
+
+                        <h2>
+                            Something delicious
+                            <span>for everyone.</span>
+                        </h2>
+                    </div>
+
+                    <p class="section-description">
+                        From signature favourites to comforting classics,
+                        discover something made just for you.
+                    </p>
+
+                </div>
+
+
+                <!-- Category Filter -->
+                <div class="menu-filters" id="menuFilters">
+
+                    <button class="filter-btn active" data-category="all">
+                        All
+                    </button>
+
+                    <button class="filter-btn" data-category="signature">
+                        Signature
+                    </button>
+
+                    <button class="filter-btn" data-category="pizza">
+                        Pizza
+                    </button>
+
+                    <button class="filter-btn" data-category="burgers">
+                        Burgers
+                    </button>
+
+                    <button class="filter-btn" data-category="main-course">
+                        Main Course
+                    </button>
+
+                    <button class="filter-btn" data-category="desserts">
+                        Desserts
+                    </button>
+
+                    <button class="filter-btn" data-category="drinks">
+                        Drinks
+                    </button>
+
+                </div>
+
+
+                <!-- Menu Grid -->
+                <div class="menu-grid" id="menuGrid">
+
+                    <!-- 1 -->
+                    <article
+                        class="food-card"
+                        data-category="signature"
+                        data-name="Urban Signature Burger"
+                        data-price="349"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍔</div>
+                            <span class="food-badge">POPULAR</span>
+
+                            <button
+                                class="quick-add"
+                                data-name="Urban Signature Burger"
+                                data-price="349"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">SIGNATURE</span>
+
+                            <h3>Urban Signature Burger</h3>
+
+                            <p>
+                                Juicy grilled patty, premium cheese,
+                                fresh vegetables and signature sauce.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹349</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.9
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 2 -->
+                    <article
+                        class="food-card"
+                        data-category="signature"
+                        data-name="Truffle Mushroom Pizza"
+                        data-price="499"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍕</div>
+                            <span class="food-badge">SIGNATURE</span>
+
+                            <button
+                                class="quick-add"
+                                data-name="Truffle Mushroom Pizza"
+                                data-price="499"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">SIGNATURE</span>
+
+                            <h3>Truffle Mushroom Pizza</h3>
+
+                            <p>
+                                Creamy mushroom topping, mozzarella,
+                                herbs and aromatic truffle flavour.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹499</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.8
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 3 -->
+                    <article
+                        class="food-card"
+                        data-category="signature"
+                        data-name="Creamy Alfredo Pasta"
+                        data-price="429"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍝</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Creamy Alfredo Pasta"
+                                data-price="429"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">SIGNATURE</span>
+
+                            <h3>Creamy Alfredo Pasta</h3>
+
+                            <p>
+                                Silky Alfredo sauce, perfectly cooked pasta,
+                                herbs and parmesan.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹429</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.9
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 4 -->
+                    <article
+                        class="food-card"
+                        data-category="signature"
+                        data-name="Smoky Grilled Chicken"
+                        data-price="549"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍗</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Smoky Grilled Chicken"
+                                data-price="549"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">SIGNATURE</span>
+
+                            <h3>Smoky Grilled Chicken</h3>
+
+                            <p>
+                                Tender grilled chicken finished with
+                                smoky herbs and house seasoning.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹549</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.9
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 5 -->
+                    <article
+                        class="food-card"
+                        data-category="pizza"
+                        data-name="Classic Margherita"
+                        data-price="399"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍕</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Classic Margherita"
+                                data-price="399"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">PIZZA</span>
+
+                            <h3>Classic Margherita</h3>
+
+                            <p>
+                                Tomato sauce, mozzarella, basil and
+                                classic Italian flavours.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹399</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.7
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 6 -->
+                    <article
+                        class="food-card"
+                        data-category="pizza"
+                        data-name="Peri Peri Chicken Pizza"
+                        data-price="499"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍕</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Peri Peri Chicken Pizza"
+                                data-price="499"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">PIZZA</span>
+
+                            <h3>Peri Peri Chicken Pizza</h3>
+
+                            <p>
+                                Spicy peri peri chicken, cheese and
+                                roasted vegetables.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹499</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.8
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 7 -->
+                    <article
+                        class="food-card"
+                        data-category="pizza"
+                        data-name="Four Cheese Pizza"
+                        data-price="529"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍕</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Four Cheese Pizza"
+                                data-price="529"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">PIZZA</span>
+
+                            <h3>Four Cheese Pizza</h3>
+
+                            <p>
+                                A rich blend of four premium cheeses
+                                with a golden baked crust.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹529</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.8
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 8 -->
+                    <article
+                        class="food-card"
+                        data-category="burgers"
+                        data-name="Crispy Chicken Burger"
+                        data-price="329"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍔</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Crispy Chicken Burger"
+                                data-price="329"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">BURGERS</span>
+
+                            <h3>Crispy Chicken Burger</h3>
+
+                            <p>
+                                Crunchy chicken fillet, fresh lettuce,
+                                creamy sauce and soft brioche bun.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹329</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.8
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 9 -->
+                    <article
+                        class="food-card"
+                        data-category="burgers"
+                        data-name="Double Cheese Burger"
+                        data-price="399"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍔</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Double Cheese Burger"
+                                data-price="399"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">BURGERS</span>
+
+                            <h3>Double Cheese Burger</h3>
+
+                            <p>
+                                Two juicy patties, double cheese and
+                                our creamy signature sauce.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹399</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.9
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 10 -->
+                    <article
+                        class="food-card"
+                        data-category="main-course"
+                        data-name="Butter Garlic Prawns"
+                        data-price="599"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍤</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Butter Garlic Prawns"
+                                data-price="599"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">MAIN COURSE</span>
+
+                            <h3>Butter Garlic Prawns</h3>
+
+                            <p>
+                                Tender prawns cooked in butter, garlic,
+                                herbs and a rich aromatic sauce.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹599</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.9
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 11 -->
+                    <article
+                        class="food-card"
+                        data-category="main-course"
+                        data-name="Creamy Mushroom Steak"
+                        data-price="649"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🥩</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Creamy Mushroom Steak"
+                                data-price="649"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">MAIN COURSE</span>
+
+                            <h3>Creamy Mushroom Steak</h3>
+
+                            <p>
+                                Perfectly grilled steak served with
+                                creamy mushroom sauce.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹649</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.9
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 12 -->
+                    <article
+                        class="food-card"
+                        data-category="main-course"
+                        data-name="Signature Chicken Bowl"
+                        data-price="449"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍲</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Signature Chicken Bowl"
+                                data-price="449"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">MAIN COURSE</span>
+
+                            <h3>Signature Chicken Bowl</h3>
+
+                            <p>
+                                Grilled chicken, fresh vegetables,
+                                rice and our signature dressing.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹449</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.8
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 13 -->
+                    <article
+                        class="food-card"
+                        data-category="desserts"
+                        data-name="Chocolate Lava Cake"
+                        data-price="249"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍫</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Chocolate Lava Cake"
+                                data-price="249"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">DESSERTS</span>
+
+                            <h3>Chocolate Lava Cake</h3>
+
+                            <p>
+                                Warm chocolate cake with a rich,
+                                molten centre.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹249</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.9
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 14 -->
+                    <article
+                        class="food-card"
+                        data-category="desserts"
+                        data-name="Classic Tiramisu"
+                        data-price="299"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍰</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Classic Tiramisu"
+                                data-price="299"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">DESSERTS</span>
+
+                            <h3>Classic Tiramisu</h3>
+
+                            <p>
+                                Soft mascarpone, espresso-soaked layers
+                                and cocoa.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹299</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.8
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 15 -->
+                    <article
+                        class="food-card"
+                        data-category="desserts"
+                        data-name="New York Cheesecake"
+                        data-price="279"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍰</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="New York Cheesecake"
+                                data-price="279"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">DESSERTS</span>
+
+                            <h3>New York Cheesecake</h3>
+
+                            <p>
+                                Creamy cheesecake with a buttery
+                                biscuit base.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹279</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.8
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 16 -->
+                    <article
+                        class="food-card"
+                        data-category="drinks"
+                        data-name="Fresh Berry Mojito"
+                        data-price="199"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🍹</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Fresh Berry Mojito"
+                                data-price="199"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">DRINKS</span>
+
+                            <h3>Fresh Berry Mojito</h3>
+
+                            <p>
+                                Fresh berries, mint, lime and a
+                                refreshing sparkling finish.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹199</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.8
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 17 -->
+                    <article
+                        class="food-card"
+                        data-category="drinks"
+                        data-name="Cold Coffee"
+                        data-price="179"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🥤</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Cold Coffee"
+                                data-price="179"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">DRINKS</span>
+
+                            <h3>Cold Coffee</h3>
+
+                            <p>
+                                Smooth chilled coffee blended with
+                                creamy milk.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹179</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.7
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- 18 -->
+                    <article
+                        class="food-card"
+                        data-category="drinks"
+                        data-name="Mango Smoothie"
+                        data-price="199"
+                    >
+                        <div class="food-image">
+                            <div class="food-emoji">🥭</div>
+
+                            <button
+                                class="quick-add"
+                                data-name="Mango Smoothie"
+                                data-price="199"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <div class="food-info">
+                            <span class="food-category">DRINKS</span>
+
+                            <h3>Mango Smoothie</h3>
+
+                            <p>
+                                Creamy mango smoothie made with
+                                ripe seasonal mangoes.
+                            </p>
+
+                            <div class="food-bottom">
+                                <strong>₹199</strong>
+
+                                <span class="food-rating">
+                                    ★ 4.9
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= OUR STORY ================= -->
+        <section class="story-section" id="about">
+
+            <div class="container story-grid">
+
+                <div class="story-visual">
+                    <div class="story-image">
+                        <span>🍽️</span>
+                    </div>
+
+                    <div class="story-stamp">
+                        <strong>10+</strong>
+                        <span>Years of<br>passion</span>
+                    </div>
+                </div>
+
+
+                <div class="story-content">
+
+                    <p class="eyebrow">OUR STORY</p>
+
+                    <h2>
+                        A love for food,
+                        <span>passed down.</span>
+                    </h2>
+
+                    <p>
+                        Riwayaat was created with one simple idea —
+                        great food should feel memorable.
+                    </p>
+
+                    <p>
+                        We bring together familiar flavours, premium
+                        ingredients and modern presentation to create
+                        dishes that feel both comforting and exciting.
+                    </p>
+
+                    <a href="#contact" class="text-link">
+                        Discover our story →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REVIEWS ================= -->
+        <section class="reviews-section" id="reviews">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <p class="eyebrow">CUSTOMER LOVE</p>
+
+                    <h2>
+                        Made with love.
+                        <span>Loved by you.</span>
+                    </h2>
+
+                    <p class="section-description">
+                        Real experiences from people who ordered
+                        from Riwayaat.
+                    </p>
+
+                </div>
+
+
+                <div class="reviews-grid" id="reviewsContainer">
+
+                    <article class="review-card">
+
+                        <div class="review-stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            “The food was amazing and the presentation
+                            was even better. Definitely ordering again!”
+                        </p>
+
+                        <div class="review-user">
+                            <div class="user-avatar">A</div>
+                            <div>
+                                <strong>Arjun</strong>
+                                <span>Verified Customer</span>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="review-card">
+
+                        <div class="review-stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            “The burger was honestly one of the best
+                            I've had. Everything arrived fresh and hot.”
+                        </p>
+
+                        <div class="review-user">
+                            <div class="user-avatar">S</div>
+                            <div>
+                                <strong>Simran</strong>
+                                <span>Verified Customer</span>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="review-card">
+
+                        <div class="review-stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            “Beautiful website, easy ordering and
+                            absolutely delicious food.”
+                        </p>
+
+                        <div class="review-user">
+                            <div class="user-avatar">R</div>
+                            <div>
+                                <strong>Rahul</strong>
+                                <span>Verified Customer</span>
+                            </div>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+        <section class="cta-section">
+
+            <div class="container cta-box">
+
+                <div>
+                    <p class="eyebrow">READY TO ORDER?</p>
+
+                    <h2>
+                        Your next favourite
+                        <span>meal is waiting.</span>
+                    </h2>
+                </div>
+
+                <a href="#menu" class="btn btn-light">
+                    Order Now →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+        <section class="contact-section" id="contact">
+
+            <div class="container contact-grid">
+
+                <div class="contact-content">
+
+                    <p class="eyebrow">FIND US</p>
+
+                    <h2>
+                        Come hungry.
+                        <span>Leave happy.</span>
+                    </h2>
+
+                    <p>
+                        Visit us for a memorable dining experience
+                        or order your favourites from anywhere.
+                    </p>
+
+                    <div class="contact-details">
+
+                        <div class="contact-item">
+                            <span>📍</span>
+                            <div>
+                                <strong>Our Location</strong>
+                                <p>City Centre, Your City, India</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span>📞</span>
+                            <div>
+                                <strong>Call Us</strong>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span>🕐</span>
+                            <div>
+                                <strong>Opening Hours</strong>
+                                <p>11:00 AM — 11:00 PM</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="location-card">
+
+                    <div class="map-placeholder">
+                        <span>📍</span>
+                        <h3>Riwayaat</h3>
+                        <p>City Centre</p>
+
+                        <button class="location-btn" id="locationBtn">
+                            Get Directions →
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= CART SIDEBAR ================= -->
+    <aside class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-header">
+
+            <div>
+                <p class="eyebrow">YOUR ORDER</p>
+                <h2>Your Cart</h2>
+            </div>
+
+            <button id="closeCart" class="close-btn">
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="cart-items" id="cartItems">
+
+            <div class="empty-cart">
+                <span>🛒</span>
+                <h3>Your cart is empty</h3>
+                <p>Add something delicious to get started.</p>
+            </div>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+                Proceed to Checkout →
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo">
+                    <span class="logo-mark">R</span>
+
+                    <span class="logo-text">
+                        Riwayaat
+                        <small>FOOD & DINING</small>
+                    </span>
+                </a>
+
+                <p>
+                    Where traditional flavours meet
+                    modern dining.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Explore</h4>
+
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">Our Story</a>
+                <a href="#reviews">Reviews</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Help</h4>
+
+                <a href="#">Delivery</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">FAQs</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Follow Us</h4>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © 2026 Riwayaat. All rights reserved.
+            </p>
+
+            <p>
+                Crafted with ♥
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= LOGIN MODAL ================= -->
+    <div class="modal" id="loginModal">
+
+        <div class="modal-box">
+
+            <button class="modal-close" id="loginClose">
+                ✕
+            </button>
+
+            <p class="eyebrow">WELCOME BACK</p>
+
+            <h2>Login to Riwayaat</h2>
+
+            <p>
+                Sign in to manage your orders and profile.
+            </p>
+
+            <form id="loginForm">
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Email address"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                    required
+                >
+
+                <button type="submit" class="btn btn-primary">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="modal-note">
+                New here?
+                <button id="showSignup">Create an account</button>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="script.js"></script>
+
+</body>
+</html>
