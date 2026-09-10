@@ -1,100 +1,17 @@
-// ===============================
-// RIWAAYAT WEBSITE JAVASCRIPT
-// ===============================
+/* ===============================
+   RIWAAYAT - SCRIPT.JS
+================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ===============================
-  // MOBILE MENU
-  // ===============================
+  /* ===============================
+     ELEMENTS
+  =============================== */
 
-  const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.querySelector(".nav-links");
-
-  if (menuToggle && navLinks) {
-
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("mobile-open");
-    });
-
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("mobile-open");
-      });
-    });
-  }
-
-
-  // ===============================
-  // HEADER SCROLL
-  // ===============================
-
-  const header = document.getElementById("header");
-
-  window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 50) {
-      header?.classList.add("scrolled");
-    } else {
-      header?.classList.remove("scrolled");
-    }
-
-  });
-
-
-  // ===============================
-  // MENU FILTER
-  // ===============================
-
-  const filters = document.querySelectorAll(".filter");
-  const foodCards = document.querySelectorAll(".food-card");
-
-  filters.forEach(filter => {
-
-    filter.addEventListener("click", () => {
-
-      filters.forEach(btn => {
-        btn.classList.remove("active");
-      });
-
-      filter.classList.add("active");
-
-      const category = filter.dataset.filter;
-
-      foodCards.forEach(card => {
-
-        if (
-          category === "all" ||
-          card.dataset.category === category
-        ) {
-
-          card.style.display = "";
-
-          setTimeout(() => {
-            card.style.opacity = "1";
-            card.style.transform = "";
-          }, 20);
-
-        } else {
-
-          card.style.display = "none";
-
-        }
-
-      });
-
-    });
-
-  });
-
-
-  // ===============================
-  // CART
-  // ===============================
-
-  let cart = JSON.parse(
-    localStorage.getItem("riwaayatCart")
-  ) || [];
+  const searchBtn = document.getElementById("searchBtn");
+  const searchOverlay = document.getElementById("searchOverlay");
+  const closeSearch = document.getElementById("closeSearch");
+  const searchInput = document.getElementById("searchInput");
 
   const cartBtn = document.getElementById("cartBtn");
   const cartSidebar = document.getElementById("cartSidebar");
@@ -104,22 +21,45 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartItems = document.getElementById("cartItems");
   const cartCount = document.getElementById("cartCount");
   const cartTotal = document.getElementById("cartTotal");
+  const checkoutBtn = document.getElementById("checkoutBtn");
 
-  function saveCart() {
+  const loginBtn = document.getElementById("loginBtn");
+  const loginModal = document.getElementById("loginModal");
+  const closeLogin = document.getElementById("closeLogin");
+  const loginForm = document.getElementById("loginForm");
 
-    localStorage.setItem(
-      "riwaayatCart",
-      JSON.stringify(cart)
-    );
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.querySelector(".nav-links");
 
-  }
+  const toast = document.getElementById("toast");
+
+  const foodCards = document.querySelectorAll(".food-card");
+  const filterButtons = document.querySelectorAll(".filter");
+
+
+  /* ===============================
+     CART
+  =============================== */
+
+  let cart = [];
 
 
   function updateCart() {
 
-    if (!cartItems) return;
+    if (!cartItems || !cartCount || !cartTotal) return;
 
-    cartItems.innerHTML = "";
+    cartCount.textContent = cart.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+
+    const total = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+
+    cartTotal.textContent = `₹${total}`;
+
 
     if (cart.length === 0) {
 
@@ -129,17 +69,16 @@ document.addEventListener("DOMContentLoaded", () => {
         </p>
       `;
 
-    } else {
+      return;
+    }
 
-      cart.forEach((item, index) => {
 
-        const cartItem = document.createElement("div");
+    cartItems.innerHTML = cart.map((item, index) => {
 
-        cartItem.className = "cart-item";
+      return `
+        <div class="cart-item">
 
-        cartItem.innerHTML = `
-
-          <div>
+          <div class="cart-item-info">
 
             <h4>${item.name}</h4>
 
@@ -149,264 +88,283 @@ document.addEventListener("DOMContentLoaded", () => {
 
           </div>
 
-          <div>
-
-            <strong>
-              ₹${item.price * item.quantity}
-            </strong>
+          <div class="cart-item-actions">
 
             <button
-              class="remove-item"
+              class="quantity-btn"
+              data-action="minus"
               data-index="${index}"
             >
-              Remove
+              −
+            </button>
+
+            <span>
+              ${item.quantity}
+            </span>
+
+            <button
+              class="quantity-btn"
+              data-action="plus"
+              data-index="${index}"
+            >
+              +
             </button>
 
           </div>
 
-        `;
+          <button
+            class="remove-item"
+            data-index="${index}"
+          >
+            ✕
+          </button>
 
-        cartItems.appendChild(cartItem);
+        </div>
+      `;
 
-      });
-
-    }
-
-
-    // TOTAL ITEMS
-
-    const totalItems = cart.reduce(
-      (sum, item) => sum + item.quantity,
-      0
-    );
-
-    if (cartCount) {
-      cartCount.textContent = totalItems;
-    }
-
-
-    // TOTAL PRICE
-
-    const totalPrice = cart.reduce(
-      (sum, item) =>
-        sum + item.price * item.quantity,
-      0
-    );
-
-    if (cartTotal) {
-      cartTotal.textContent =
-        `₹${totalPrice}`;
-    }
-
-
-    // REMOVE ITEM
-
-    document
-      .querySelectorAll(".remove-item")
-      .forEach(button => {
-
-        button.addEventListener("click", () => {
-
-          const index =
-            Number(button.dataset.index);
-
-          cart.splice(index, 1);
-
-          saveCart();
-
-          updateCart();
-
-        });
-
-      });
+    }).join("");
 
   }
 
 
-  // ===============================
-  // ADD TO CART
-  // ===============================
+  function addToCart(name, price) {
 
-  document
-    .querySelectorAll(".add-cart")
-    .forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        const name =
-          button.dataset.name;
-
-        const price =
-          Number(button.dataset.price);
+    const existing = cart.find(
+      item => item.name === name
+    );
 
 
-        const existing =
-          cart.find(item =>
-            item.name === name
-          );
+    if (existing) {
+
+      existing.quantity++;
+
+    } else {
+
+      cart.push({
+        name: name,
+        price: Number(price),
+        quantity: 1
+      });
+
+    }
+
+    updateCart();
+    showToast(`${name} added to cart ✓`);
+  }
 
 
-        if (existing) {
+  /* ===============================
+     ADD CART BUTTONS
+  =============================== */
 
-          existing.quantity++;
+  document.addEventListener("click", (e) => {
 
-        } else {
+    const button = e.target.closest(".add-cart");
 
-          cart.push({
-            name: name,
-            price: price,
-            quantity: 1
-          });
+    if (!button) return;
+
+    const name = button.dataset.name;
+    const price = button.dataset.price;
+
+    addToCart(name, price);
+
+  });
+
+
+  /* ===============================
+     CART QUANTITY
+  =============================== */
+
+  if (cartItems) {
+
+    cartItems.addEventListener("click", (e) => {
+
+      const quantityButton =
+        e.target.closest(".quantity-btn");
+
+      const removeButton =
+        e.target.closest(".remove-item");
+
+
+      if (quantityButton) {
+
+        const index =
+          Number(quantityButton.dataset.index);
+
+        const action =
+          quantityButton.dataset.action;
+
+
+        if (action === "plus") {
+
+          cart[index].quantity++;
 
         }
 
+        if (action === "minus") {
 
-        saveCart();
+          cart[index].quantity--;
+
+          if (cart[index].quantity <= 0) {
+
+            cart.splice(index, 1);
+
+          }
+
+        }
 
         updateCart();
 
-        showToast(
-          `${name} added to cart ✓`
-        );
-
-      });
-
-    });
+      }
 
 
-  // ===============================
-  // OPEN CART
-  // ===============================
+      if (removeButton) {
 
-  function openCart() {
+        const index =
+          Number(removeButton.dataset.index);
 
-    cartSidebar?.classList.add("show");
-    cartOverlay?.classList.add("show");
+        cart.splice(index, 1);
 
-    document.body.style.overflow = "hidden";
-
-  }
-
-
-  // ===============================
-  // CLOSE CART
-  // ===============================
-
-  function closeCartPanel() {
-
-    cartSidebar?.classList.remove("show");
-    cartOverlay?.classList.remove("show");
-
-    document.body.style.overflow = "";
-
-  }
-
-
-  cartBtn?.addEventListener(
-    "click",
-    openCart
-  );
-
-
-  closeCart?.addEventListener(
-    "click",
-    closeCartPanel
-  );
-
-
-  cartOverlay?.addEventListener(
-    "click",
-    closeCartPanel
-  );
-
-
-  // ===============================
-  // CHECKOUT
-  // ===============================
-
-  const checkoutBtn =
-    document.getElementById("checkoutBtn");
-
-  checkoutBtn?.addEventListener(
-    "click",
-    () => {
-
-      if (cart.length === 0) {
-
-        showToast(
-          "Your cart is empty!"
-        );
-
-        return;
+        updateCart();
 
       }
 
-      showToast(
-        "Checkout coming soon 🚀"
-      );
+    });
 
-    }
+  }
+
+
+  /* ===============================
+     CART OPEN / CLOSE
+  =============================== */
+
+  function openCart() {
+
+    cartSidebar?.classList.add("active");
+    cartOverlay?.classList.add("active");
+
+    document.body.classList.add("no-scroll");
+
+  }
+
+
+  function closeCartSidebar() {
+
+    cartSidebar?.classList.remove("active");
+    cartOverlay?.classList.remove("active");
+
+    document.body.classList.remove("no-scroll");
+
+  }
+
+
+  cartBtn?.addEventListener("click", openCart);
+
+  closeCart?.addEventListener(
+    "click",
+    closeCartSidebar
+  );
+
+  cartOverlay?.addEventListener(
+    "click",
+    closeCartSidebar
   );
 
 
-  // ===============================
-  // SEARCH
-  // ===============================
+  /* ===============================
+     CHECKOUT
+  =============================== */
 
-  const searchBtn =
-    document.getElementById("searchBtn");
+  checkoutBtn?.addEventListener("click", () => {
 
-  const searchOverlay =
-    document.getElementById("searchOverlay");
+    if (cart.length === 0) {
 
-  const closeSearch =
-    document.getElementById("closeSearch");
+      showToast("Your cart is empty!");
 
-  const searchInput =
-    document.getElementById("searchInput");
+      return;
+
+    }
+
+
+    showToast("Order checkout coming soon ✓");
+
+  });
+
+
+  /* ===============================
+     SEARCH
+  =============================== */
+
+  function openSearch() {
+
+    searchOverlay?.classList.add("active");
+
+    document.body.classList.add("no-scroll");
+
+    setTimeout(() => {
+
+      searchInput?.focus();
+
+    }, 200);
+
+  }
+
+
+  function closeSearchBox() {
+
+    searchOverlay?.classList.remove("active");
+
+    document.body.classList.remove("no-scroll");
+
+    if (searchInput) {
+
+      searchInput.value = "";
+
+    }
+
+    foodCards.forEach(card => {
+
+      card.style.display = "";
+
+    });
+
+  }
 
 
   searchBtn?.addEventListener(
     "click",
-    () => {
-
-      searchOverlay?.classList.add("show");
-
-      setTimeout(() => {
-        searchInput?.focus();
-      }, 100);
-
-    }
+    openSearch
   );
-
 
   closeSearch?.addEventListener(
     "click",
-    () => {
+    closeSearchBox
+  );
 
-      searchOverlay?.classList.remove("show");
 
-      if (searchInput) {
-        searchInput.value = "";
+  searchOverlay?.addEventListener(
+    "click",
+    (e) => {
+
+      if (e.target === searchOverlay) {
+
+        closeSearchBox();
+
       }
-
-      foodCards.forEach(card => {
-        card.style.display = "";
-      });
 
     }
   );
 
 
-  // ===============================
-  // SEARCH FOOD
-  // ===============================
+  /* ===============================
+     LIVE SEARCH
+  =============================== */
 
   searchInput?.addEventListener(
     "input",
     () => {
 
-      const search =
+      const searchValue =
         searchInput.value
           .toLowerCase()
           .trim();
@@ -414,22 +372,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       foodCards.forEach(card => {
 
-        const name =
-          card
-            .querySelector("h3")
-            ?.textContent
-            .toLowerCase() || "";
-
-        const description =
-          card
-            .querySelector("p")
-            ?.textContent
-            .toLowerCase() || "";
+        const text =
+          card.textContent.toLowerCase();
 
 
         if (
-          name.includes(search) ||
-          description.includes(search)
+          searchValue === "" ||
+          text.includes(searchValue)
         ) {
 
           card.style.display = "";
@@ -446,56 +395,93 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 
-  // ===============================
-  // LOGIN MODAL
-  // ===============================
+  /* ===============================
+     CATEGORY FILTER
+  =============================== */
 
-  const loginBtn =
-    document.getElementById("loginBtn");
+  filterButtons.forEach(button => {
 
-  const loginModal =
-    document.getElementById("loginModal");
+    button.addEventListener("click", () => {
 
-  const closeLogin =
-    document.getElementById("closeLogin");
+      const filter =
+        button.dataset.filter;
 
-  const loginForm =
-    document.getElementById("loginForm");
+
+      filterButtons.forEach(btn => {
+
+        btn.classList.remove("active");
+
+      });
+
+      button.classList.add("active");
+
+
+      foodCards.forEach(card => {
+
+        const category =
+          card.dataset.category;
+
+
+        if (
+          filter === "all" ||
+          category === filter
+        ) {
+
+          card.style.display = "";
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+    });
+
+  });
+
+
+  /* ===============================
+     LOGIN MODAL
+  =============================== */
+
+  function openLogin() {
+
+    loginModal?.classList.add("active");
+
+    document.body.classList.add("no-scroll");
+
+  }
+
+
+  function closeLoginModal() {
+
+    loginModal?.classList.remove("active");
+
+    document.body.classList.remove("no-scroll");
+
+  }
 
 
   loginBtn?.addEventListener(
     "click",
-    () => {
-
-      loginModal?.classList.add("show");
-
-      document.body.style.overflow = "hidden";
-
-    }
+    openLogin
   );
-
 
   closeLogin?.addEventListener(
     "click",
-    () => {
-
-      loginModal?.classList.remove("show");
-
-      document.body.style.overflow = "";
-
-    }
+    closeLoginModal
   );
 
 
   loginModal?.addEventListener(
     "click",
-    event => {
+    (e) => {
 
-      if (event.target === loginModal) {
+      if (e.target === loginModal) {
 
-        loginModal.classList.remove("show");
-
-        document.body.style.overflow = "";
+        closeLoginModal();
 
       }
 
@@ -505,29 +491,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loginForm?.addEventListener(
     "submit",
-    event => {
+    (e) => {
 
-      event.preventDefault();
+      e.preventDefault();
 
-      showToast(
-        "Login system coming soon 🚀"
-      );
+      showToast("Login successful ✓");
 
-      loginModal?.classList.remove("show");
+      closeLoginModal();
 
-      document.body.style.overflow = "";
+      loginForm.reset();
 
     }
   );
 
 
-  // ===============================
-  // TOAST
-  // ===============================
+  /* ===============================
+     MOBILE MENU
+  =============================== */
 
-  const toast =
-    document.getElementById("toast");
+  menuToggle?.addEventListener(
+    "click",
+    () => {
 
+      navLinks?.classList.toggle("active");
+
+    }
+  );
+
+
+  if (navLinks) {
+
+    navLinks
+      .querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            navLinks.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+      });
+
+  }
+
+
+  /* ===============================
+     TOAST
+  =============================== */
 
   let toastTimer;
 
@@ -540,7 +556,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toast.classList.add("show");
 
+
     clearTimeout(toastTimer);
+
 
     toastTimer = setTimeout(() => {
 
@@ -551,23 +569,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // ===============================
-  // ESC KEY
-  // ===============================
+  /* ===============================
+     HEADER SCROLL
+  =============================== */
 
-  document.addEventListener(
-    "keydown",
-    event => {
+  const header =
+    document.getElementById("header");
 
-      if (event.key === "Escape") {
 
-        searchOverlay?.classList.remove("show");
+  window.addEventListener(
+    "scroll",
+    () => {
 
-        loginModal?.classList.remove("show");
+      if (!header) return;
 
-        closeCartPanel();
+      if (window.scrollY > 50) {
 
-        document.body.style.overflow = "";
+        header.classList.add("scrolled");
+
+      } else {
+
+        header.classList.remove("scrolled");
 
       }
 
@@ -575,9 +597,27 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 
-  // ===============================
-  // INITIAL CART LOAD
-  // ===============================
+  /* ===============================
+     ESC KEY
+  =============================== */
+
+  document.addEventListener(
+    "keydown",
+    (e) => {
+
+      if (e.key !== "Escape") return;
+
+      closeSearchBox();
+      closeCartSidebar();
+      closeLoginModal();
+
+    }
+  );
+
+
+  /* ===============================
+     INITIAL CART
+  =============================== */
 
   updateCart();
 
