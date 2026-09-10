@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,14 +11,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<header class="header">
+
+<!-- ================= HEADER ================= -->
+
+<header class="header" id="header">
+
   <div class="container nav">
 
     <a href="#home" class="logo">
@@ -24,53 +35,70 @@
       <small>FINE FOOD • FINE MOMENTS</small>
     </a>
 
+
     <nav class="nav-links">
+
       <a href="#home">Home</a>
       <a href="#menu">Menu</a>
       <a href="#story">Our Story</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
+
     </nav>
 
+
     <div class="nav-actions">
-      <button class="search-btn" id="searchBtn">⌕</button>
+
+      <button class="search-btn" id="searchBtn">
+        🔍
+      </button>
 
       <button class="cart-btn" id="cartBtn">
         🛒
         <span id="cartCount">0</span>
       </button>
 
-      <button class="login-btn" id="loginBtn">Login</button>
+      <button class="login-btn" id="loginBtn">
+        Login
+      </button>
 
-      <button class="menu-toggle" id="menuToggle">☰</button>
+      <button class="menu-toggle" id="menuToggle">
+        ☰
+      </button>
+
     </div>
 
   </div>
+
 </header>
 
 
-<!-- SEARCH -->
+
+<!-- ================= SEARCH ================= -->
 
 <div class="search-overlay" id="searchOverlay">
 
   <div class="search-box">
-    <button id="closeSearch">✕</button>
+
+    <button id="closeSearch">
+      ✕
+    </button>
 
     <input
       type="text"
       id="searchInput"
       placeholder="Search your favourite dish..."
     >
+
   </div>
 
 </div>
 
 
-<!-- HERO -->
+
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
-
-  <div class="hero-overlay"></div>
 
   <div class="hero-content">
 
@@ -88,9 +116,17 @@
       meet contemporary presentation.
     </p>
 
+
     <div class="hero-buttons">
-      <a href="#menu" class="btn btn-primary">Explore Menu</a>
-      <a href="#story" class="btn btn-outline">Our Story</a>
+
+      <a href="#menu" class="btn btn-primary">
+        Explore Menu
+      </a>
+
+      <a href="#story" class="btn btn-outline">
+        Our Story
+      </a>
+
     </div>
 
   </div>
@@ -98,407 +134,738 @@
 </section>
 
 
-<!-- FEATURES -->
+
+<!-- ================= FEATURES ================= -->
 
 <section class="features">
 
   <div class="container feature-grid">
 
-    <div class="feature">
-      <span>✦</span>
-      <div>
-        <h3>Fresh Ingredients</h3>
-        <p>Handpicked ingredients, prepared fresh.</p>
-      </div>
-    </div>
 
     <div class="feature">
+
       <span>✦</span>
+
       <div>
-        <h3>Authentic Flavours</h3>
-        <p>Recipes inspired by India's rich food culture.</p>
+
+        <h3>
+          Fresh Ingredients
+        </h3>
+
+        <p>
+          Handpicked ingredients, prepared fresh.
+        </p>
+
       </div>
+
     </div>
 
+
+
     <div class="feature">
+
       <span>✦</span>
+
       <div>
-        <h3>Made With Love</h3>
-        <p>Every plate is prepared with care.</p>
+
+        <h3>
+          Authentic Flavours
+        </h3>
+
+        <p>
+          Recipes inspired by India's rich food culture.
+        </p>
+
       </div>
+
     </div>
+
+
+
+    <div class="feature">
+
+      <span>✦</span>
+
+      <div>
+
+        <h3>
+          Made With Love
+        </h3>
+
+        <p>
+          Every plate is prepared with care.
+        </p>
+
+      </div>
+
+    </div>
+
 
   </div>
 
 </section>
 
 
-<!-- MENU -->
+
+<!-- ================= MENU ================= -->
 
 <section class="menu-section" id="menu">
 
   <div class="container">
 
+
     <div class="section-heading">
 
       <div>
-        <p class="eyebrow">OUR MENU</p>
+
+        <p class="eyebrow">
+          OUR MENU
+        </p>
 
         <h2>
           Crafted for<br>
           <em>your cravings.</em>
         </h2>
+
       </div>
 
+
       <p class="section-description">
+
         From comforting Indian classics to modern favourites,
         discover something delicious for every mood.
+
       </p>
 
     </div>
+
 
 
     <!-- FILTERS -->
 
     <div class="filters">
 
-      <button class="filter active" data-filter="all">ALL</button>
-      <button class="filter" data-filter="signature">SIGNATURE</button>
-      <button class="filter" data-filter="pizza">PIZZA</button>
-      <button class="filter" data-filter="burgers">BURGERS</button>
-      <button class="filter" data-filter="fast-food">FAST FOOD</button>
-      <button class="filter" data-filter="north-indian">NORTH INDIAN</button>
-      <button class="filter" data-filter="main-course">MAIN COURSE</button>
-      <button class="filter" data-filter="desserts">DESSERTS</button>
-      <button class="filter" data-filter="drinks">DRINKS</button>
+      <button class="filter active" data-filter="all">
+        ALL
+      </button>
+
+      <button class="filter" data-filter="signature">
+        SIGNATURE
+      </button>
+
+      <button class="filter" data-filter="pizza">
+        PIZZA
+      </button>
+
+      <button class="filter" data-filter="burgers">
+        BURGERS
+      </button>
+
+      <button class="filter" data-filter="fast-food">
+        FAST FOOD
+      </button>
+
+      <button class="filter" data-filter="north-indian">
+        NORTH INDIAN
+      </button>
+
+      <button class="filter" data-filter="main-course">
+        MAIN COURSE
+      </button>
+
+      <button class="filter" data-filter="desserts">
+        DESSERTS
+      </button>
+
+      <button class="filter" data-filter="drinks">
+        DRINKS
+      </button>
 
     </div>
 
 
-    <!-- FOOD GRID -->
+
+    <!-- ================= FOOD GRID ================= -->
 
     <div class="food-grid" id="foodGrid">
 
 
-      <!-- 1 BURGER -->
+
+      <!-- 1 SIGNATURE BURGER -->
 
       <article class="food-card" data-category="signature">
 
         <div class="food-image">
-          <img src="burger.jpg" alt="Urban Signature Burger">
-          <span class="food-tag">SIGNATURE</span>
+
+          <img
+            src="Urban Signature Burger.jfif"
+            alt="Urban Signature Burger"
+            class="food-real-image"
+          >
+
+          <span class="food-tag">
+            SIGNATURE
+          </span>
+
         </div>
 
-        <div class="food-info">
-          <h3>Urban Signature Burger</h3>
 
-          <p>
-            Juicy grilled patty, cheese, fresh vegetables
-            and our signature sauce.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Urban Signature Burger
+            </h3>
+
+            <p>
+              Juicy grilled patty, cheese, fresh vegetables
+              and our signature sauce.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹349</strong>
+
+            <strong>
+              ₹349
+            </strong>
 
             <button
               class="add-cart"
               data-name="Urban Signature Burger"
               data-price="349"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 2 NAAN -->
+
+      <!-- 2 BUTTER NAAN -->
 
       <article class="food-card" data-category="north-indian">
 
         <div class="food-image">
-          <img src="butter naan.jpg" alt="Butter Naan">
+
+          <img
+            src="butter naan.jfif"
+            alt="Butter Naan"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Butter Naan</h3>
 
-          <p>
-            Soft, fluffy naan finished with aromatic butter.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Butter Naan
+            </h3>
+
+            <p>
+              Soft, fluffy naan finished with aromatic butter.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹79</strong>
+
+            <strong>
+              ₹79
+            </strong>
 
             <button
               class="add-cart"
               data-name="Butter Naan"
               data-price="79"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 3 MOMOS -->
+
+      <!-- 3 CHEESE MOMOS -->
 
       <article class="food-card" data-category="fast-food">
 
         <div class="food-image">
-          <img src="cheese momos.jpg" alt="Cheese Momos">
+
+          <img
+            src="Cheese momos.jfif"
+            alt="Cheese Momos"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Cheese Momos</h3>
 
-          <p>
-            Soft steamed momos loaded with creamy cheese.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Cheese Momos
+            </h3>
+
+            <p>
+              Soft steamed momos loaded with creamy cheese.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹229</strong>
+
+            <strong>
+              ₹229
+            </strong>
 
             <button
               class="add-cart"
               data-name="Cheese Momos"
               data-price="229"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 4 BIRYANI -->
+
+      <!-- 4 CHICKEN BIRYANI -->
 
       <article class="food-card" data-category="main-course">
 
         <div class="food-image">
-          <img src="chicken biryani.jpg" alt="Chicken Biryani">
+
+          <img
+            src="Chicken biryani.jfif"
+            alt="Chicken Biryani"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Chicken Biryani</h3>
 
-          <p>
-            Fragrant basmati rice, tender chicken and aromatic spices.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Chicken Biryani
+            </h3>
+
+            <p>
+              Fragrant basmati rice, tender chicken and aromatic spices.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹399</strong>
+
+            <strong>
+              ₹399
+            </strong>
 
             <button
               class="add-cart"
               data-name="Chicken Biryani"
               data-price="399"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 5 SANDWICH -->
+
+      <!-- 5 CHINESE SANDWICH -->
 
       <article class="food-card" data-category="fast-food">
 
         <div class="food-image">
-          <img src="chineese sandwich.jpg" alt="Chinese Sandwich">
+
+          <img
+            src="Chineese sandwich.jfif"
+            alt="Chinese Sandwich"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Chinese Sandwich</h3>
 
-          <p>
-            Crispy toasted sandwich with spicy Chinese-style filling.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Chinese Sandwich
+            </h3>
+
+            <p>
+              Crispy toasted sandwich with spicy Chinese-style filling.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹199</strong>
+
+            <strong>
+              ₹199
+            </strong>
 
             <button
               class="add-cart"
               data-name="Chinese Sandwich"
               data-price="199"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 6 ICE CREAM -->
+
+      <!-- 6 CHOCOLATE ICE CREAM -->
 
       <article class="food-card" data-category="desserts">
 
         <div class="food-image">
-          <img src="chocolate icecream.jpg" alt="Chocolate Ice Cream">
+
+          <img
+            src="Chocolate Ice Cream.jfif"
+            alt="Chocolate Ice Cream"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Chocolate Ice Cream</h3>
 
-          <p>
-            Rich, creamy chocolate ice cream for the perfect finish.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Chocolate Ice Cream
+            </h3>
+
+            <p>
+              Rich, creamy chocolate ice cream for the perfect finish.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹179</strong>
+
+            <strong>
+              ₹179
+            </strong>
 
             <button
               class="add-cart"
               data-name="Chocolate Ice Cream"
               data-price="179"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 7 COFFEE -->
+
+      <!-- 7 CREAMY COLD COFFEE -->
 
       <article class="food-card" data-category="drinks">
 
         <div class="food-image">
-          <img src="creamy cold coffee.jpg" alt="Creamy Cold Coffee">
+
+          <img
+            src="Creamy cold coffee.jfif"
+            alt="Creamy Cold Coffee"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Creamy Cold Coffee</h3>
 
-          <p>
-            Chilled creamy coffee topped with a smooth sweet finish.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Creamy Cold Coffee
+            </h3>
+
+            <p>
+              Chilled creamy coffee topped with a smooth sweet finish.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹189</strong>
+
+            <strong>
+              ₹189
+            </strong>
 
             <button
               class="add-cart"
               data-name="Creamy Cold Coffee"
               data-price="189"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 8 PASTA -->
+
+      <!-- 8 CREAMY TOMATO PASTA -->
 
       <article class="food-card" data-category="main-course">
 
         <div class="food-image">
-          <img src="creamy pasta.jpg - Copy.jpg" alt="Creamy Tomato Pasta">
+
+          <img
+            src="Creamy Tomato pasta.jfif"
+            alt="Creamy Tomato Pasta"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Creamy Tomato Pasta</h3>
 
-          <p>
-            Silky creamy pasta tossed in a rich tomato sauce.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Creamy Tomato Pasta
+            </h3>
+
+            <p>
+              Silky creamy pasta tossed in a rich tomato sauce.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹429</strong>
+
+            <strong>
+              ₹429
+            </strong>
 
             <button
               class="add-cart"
               data-name="Creamy Tomato Pasta"
               data-price="429"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 9 PIZZA -->
+
+      <!-- 9 LOADED VEG PIZZA -->
 
       <article class="food-card" data-category="pizza">
 
         <div class="food-image">
-          <img src="pizza.jpg" alt="Loaded Veg Pizza">
+
+          <img
+            src="Loaded Veg pizza.jfif"
+            alt="Loaded Veg Pizza"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Loaded Veg Pizza</h3>
 
-          <p>
-            Cheesy pizza topped with fresh vegetables and herbs.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Loaded Veg Pizza
+            </h3>
+
+            <p>
+              Cheesy pizza topped with fresh vegetables and herbs.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹499</strong>
+
+            <strong>
+              ₹499
+            </strong>
 
             <button
               class="add-cart"
               data-name="Loaded Veg Pizza"
               data-price="499"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 10 FRIES -->
+
+      <!-- 10 CRISPY FRENCH FRIES -->
 
       <article class="food-card" data-category="fast-food">
 
         <div class="food-image">
-          <img src="crispy french fries.jpg" alt="Crispy French Fries">
+
+          <img
+            src="Crispy French fries.jfif"
+            alt="Crispy French Fries"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Crispy French Fries</h3>
 
-          <p>
-            Golden crispy fries with a perfectly seasoned crunch.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Crispy French Fries
+            </h3>
+
+            <p>
+              Golden crispy fries with a perfectly seasoned crunch.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹149</strong>
+
+            <strong>
+              ₹149
+            </strong>
 
             <button
               class="add-cart"
               data-name="Crispy French Fries"
               data-price="149"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 11 MALWANI -->
+
+      <!-- 11 MALWANI CHICKEN -->
 
       <article class="food-card" data-category="main-course">
 
         <div class="food-image">
-          <img src="malwani chicken curry.jpg" alt="Malwani Chicken Curry">
+
+          <img
+            src="malwani -chicken.jfif"
+            alt="Malwani Chicken Curry"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Malwani Chicken Curry</h3>
 
-          <p>
-            Spicy coastal chicken curry cooked with fragrant spices.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Malwani Chicken Curry
+            </h3>
+
+            <p>
+              Spicy coastal chicken curry cooked with fragrant spices.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹549</strong>
+
+            <strong>
+              ₹549
+            </strong>
 
             <button
               class="add-cart"
               data-name="Malwani Chicken Curry"
               data-price="549"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
+
 
 
       <!-- 12 SHAHI PANEER -->
@@ -506,28 +873,51 @@
       <article class="food-card" data-category="north-indian">
 
         <div class="food-image">
-          <img src="sahi paneer.jpg" alt="Shahi Paneer">
+
+          <img
+            src="sahi-paneer.jfif"
+            alt="Shahi Paneer"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Shahi Paneer</h3>
 
-          <p>
-            Soft paneer cooked in a rich creamy royal gravy.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Shahi Paneer
+            </h3>
+
+            <p>
+              Soft paneer cooked in a rich creamy royal gravy.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹399</strong>
+
+            <strong>
+              ₹399
+            </strong>
 
             <button
               class="add-cart"
               data-name="Shahi Paneer"
               data-price="399"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
+
 
 
       <!-- 13 RASMALAI -->
@@ -535,28 +925,51 @@
       <article class="food-card" data-category="desserts">
 
         <div class="food-image">
-          <img src="Rasmalai.jpg" alt="Rasmalai">
+
+          <img
+            src="Rasmalai.jfif"
+            alt="Rasmalai"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Rasmalai</h3>
 
-          <p>
-            Soft cheese dumplings soaked in fragrant saffron milk.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Rasmalai
+            </h3>
+
+            <p>
+              Soft cheese dumplings soaked in fragrant saffron milk.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹199</strong>
+
+            <strong>
+              ₹199
+            </strong>
 
             <button
               class="add-cart"
               data-name="Rasmalai"
               data-price="199"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
+
 
 
       <!-- 14 RAJBHOG -->
@@ -564,86 +977,155 @@
       <article class="food-card" data-category="desserts">
 
         <div class="food-image">
-          <img src="Rajbhog.jpg" alt="Rajbhog Ice Cream">
+
+          <img
+            src="Rajbhog.jfif"
+            alt="Rajbhog Ice Cream"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Rajbhog Ice Cream</h3>
 
-          <p>
-            Royal creamy ice cream with rich nutty flavours.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Rajbhog Ice Cream
+            </h3>
+
+            <p>
+              Royal creamy ice cream with rich nutty flavours.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹189</strong>
+
+            <strong>
+              ₹189
+            </strong>
 
             <button
               class="add-cart"
               data-name="Rajbhog Ice Cream"
               data-price="189"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 15 MANGO -->
+
+      <!-- 15 MANGO SHAKE -->
 
       <article class="food-card" data-category="drinks">
 
         <div class="food-image">
-          <img src="mango shake.jpg" alt="Mango Shake">
+
+          <img
+            src="mango-shake.jfif"
+            alt="Mango Shake"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Mango Shake</h3>
 
-          <p>
-            Thick creamy mango shake made with fresh mangoes.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Mango Shake
+            </h3>
+
+            <p>
+              Thick creamy mango shake made with fresh mangoes.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹199</strong>
+
+            <strong>
+              ₹199
+            </strong>
 
             <button
               class="add-cart"
               data-name="Mango Shake"
               data-price="199"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
 
-      <!-- 16 DOUBLE BURGER -->
+
+      <!-- 16 DOUBLE CHEESE BURGER -->
 
       <article class="food-card" data-category="burgers">
 
         <div class="food-image">
-          <img src="burger.jpg" alt="Double Cheese Burger">
+
+          <img
+            src="Urban Signature Burger.jfif"
+            alt="Double Cheese Burger"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Double Cheese Burger</h3>
 
-          <p>
-            Double cheesy, juicy and loaded with flavour.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Double Cheese Burger
+            </h3>
+
+            <p>
+              Double cheesy, juicy and loaded with flavour.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹399</strong>
+
+            <strong>
+              ₹399
+            </strong>
 
             <button
               class="add-cart"
               data-name="Double Cheese Burger"
               data-price="399"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
+
 
 
       <!-- 17 MASALA FRIES -->
@@ -651,28 +1133,51 @@
       <article class="food-card" data-category="fast-food">
 
         <div class="food-image">
-          <img src="crispy french fries.jpg" alt="Masala Fries">
+
+          <img
+            src="Crispy French fries.jfif"
+            alt="Masala Fries"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Masala Fries</h3>
 
-          <p>
-            Crispy fries tossed with our special masala seasoning.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Masala Fries
+            </h3>
+
+            <p>
+              Crispy fries tossed with our special masala seasoning.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹169</strong>
+
+            <strong>
+              ₹169
+            </strong>
 
             <button
               class="add-cart"
               data-name="Masala Fries"
               data-price="169"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
+
 
 
       <!-- 18 PANEER BUTTER MASALA -->
@@ -680,47 +1185,82 @@
       <article class="food-card" data-category="north-indian">
 
         <div class="food-image">
-          <img src="sahi paneer.jpg" alt="Paneer Butter Masala">
+
+          <img
+            src="sahi-paneer.jfif"
+            alt="Paneer Butter Masala"
+            class="food-real-image"
+          >
+
         </div>
 
-        <div class="food-info">
-          <h3>Paneer Butter Masala</h3>
 
-          <p>
-            Soft paneer in a buttery tomato-based creamy gravy.
-          </p>
+        <div class="food-info">
+
+          <div>
+
+            <h3>
+              Paneer Butter Masala
+            </h3>
+
+            <p>
+              Soft paneer in a buttery tomato-based creamy gravy.
+            </p>
+
+          </div>
+
 
           <div class="food-bottom">
-            <strong>₹429</strong>
+
+            <strong>
+              ₹429
+            </strong>
 
             <button
               class="add-cart"
               data-name="Paneer Butter Masala"
               data-price="429"
-            >+</button>
+            >
+              +
+            </button>
+
           </div>
+
         </div>
 
       </article>
 
+
     </div>
+
   </div>
+
 </section>
 
 
-<!-- STORY -->
+
+<!-- ================= STORY ================= -->
 
 <section class="story" id="story">
 
   <div class="container story-grid">
 
+
     <div class="story-image">
-      <img src="chicken biryani.jpg" alt="Riwaayat food">
+
+      <img
+        src="Chicken biryani.jfif"
+        alt="Riwaayat food"
+      >
+
     </div>
+
 
     <div class="story-content">
 
-      <p class="eyebrow">OUR STORY</p>
+      <p class="eyebrow">
+        OUR STORY
+      </p>
 
       <h2>
         Food with a little bit of
@@ -744,20 +1284,25 @@
 
     </div>
 
+
   </div>
 
 </section>
 
 
-<!-- REVIEWS -->
+
+<!-- ================= REVIEWS ================= -->
 
 <section class="reviews" id="reviews">
 
   <div class="container">
 
+
     <div class="section-heading center">
 
-      <p class="eyebrow">GUEST LOVE</p>
+      <p class="eyebrow">
+        GUEST LOVE
+      </p>
 
       <h2>
         Loved by people who
@@ -766,54 +1311,83 @@
 
     </div>
 
+
     <div class="review-grid">
 
+
       <article class="review-card">
-        <div class="stars">★★★★★</div>
+
+        <div class="stars">
+          ★★★★★
+        </div>
 
         <p>
           “The food presentation is beautiful and
           everything tasted absolutely fresh.”
         </p>
 
-        <strong>— Aditi Sharma</strong>
+        <strong>
+          — Aditi Sharma
+        </strong>
+
       </article>
 
+
+
       <article class="review-card">
-        <div class="stars">★★★★★</div>
+
+        <div class="stars">
+          ★★★★★
+        </div>
 
         <p>
           “The biryani and creamy pasta were amazing.
           Definitely coming back again.”
         </p>
 
-        <strong>— Rahul Verma</strong>
+        <strong>
+          — Rahul Verma
+        </strong>
+
       </article>
 
+
+
       <article class="review-card">
-        <div class="stars">★★★★★</div>
+
+        <div class="stars">
+          ★★★★★
+        </div>
 
         <p>
           “Beautiful ambience, delicious food and
           really smooth service.”
         </p>
 
-        <strong>— Priya Singh</strong>
+        <strong>
+          — Priya Singh
+        </strong>
+
       </article>
 
+
     </div>
+
   </div>
 
 </section>
 
 
-<!-- CTA -->
+
+<!-- ================= CTA ================= -->
 
 <section class="cta">
 
   <div class="container cta-inner">
 
-    <p class="eyebrow">READY TO EAT?</p>
+    <p class="eyebrow">
+      READY TO EAT?
+    </p>
 
     <h2>
       Good food is waiting
@@ -829,15 +1403,19 @@
 </section>
 
 
-<!-- CONTACT -->
+
+<!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
 
   <div class="container contact-grid">
 
+
     <div>
 
-      <p class="eyebrow">CONTACT</p>
+      <p class="eyebrow">
+        CONTACT
+      </p>
 
       <h2>
         Let's make your
@@ -851,26 +1429,48 @@
 
     </div>
 
+
     <div class="contact-details">
 
+
       <div>
-        <span>Email</span>
+
+        <span>
+          Email
+        </span>
+
         <a href="mailto:hello@riwaayat.com">
           hello@riwaayat.com
         </a>
+
       </div>
 
+
       <div>
-        <span>Phone</span>
+
+        <span>
+          Phone
+        </span>
+
         <a href="tel:+917510061512">
           +91 75100 61512
         </a>
+
       </div>
 
+
       <div>
-        <span>Location</span>
-        <p>Lucknow, Uttar Pradesh, India</p>
+
+        <span>
+          Location
+        </span>
+
+        <p>
+          Lucknow, Uttar Pradesh, India
+        </p>
+
       </div>
+
 
     </div>
 
@@ -879,24 +1479,51 @@
 </section>
 
 
-<!-- CART -->
 
-<div class="cart-overlay" id="cartOverlay"></div>
+<!-- ================= CART OVERLAY ================= -->
 
-<aside class="cart-sidebar" id="cartSidebar">
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+></div>
+
+
+
+<!-- ================= CART ================= -->
+
+<aside
+  class="cart-sidebar"
+  id="cartSidebar"
+>
+
 
   <div class="cart-header">
 
     <div>
-      <p class="eyebrow">YOUR ORDER</p>
-      <h2>Your Cart</h2>
+
+      <p class="eyebrow">
+        YOUR ORDER
+      </p>
+
+      <h2>
+        Your Cart
+      </h2>
+
     </div>
 
-    <button id="closeCart">✕</button>
+
+    <button id="closeCart">
+      ✕
+    </button>
 
   </div>
 
-  <div class="cart-items" id="cartItems">
+
+
+  <div
+    class="cart-items"
+    id="cartItems"
+  >
 
     <p class="empty-cart">
       Your cart is empty.
@@ -904,37 +1531,70 @@
 
   </div>
 
+
+
   <div class="cart-footer">
 
+
     <div class="cart-total">
-      <span>Total</span>
-      <strong id="cartTotal">₹0</strong>
+
+      <span>
+        Total
+      </span>
+
+      <strong id="cartTotal">
+        ₹0
+      </strong>
+
     </div>
 
-    <button class="checkout-btn" id="checkoutBtn">
+
+    <button
+      class="checkout-btn"
+      id="checkoutBtn"
+    >
       Proceed to Checkout
     </button>
 
+
   </div>
+
 
 </aside>
 
 
-<!-- LOGIN -->
 
-<div class="modal-overlay" id="loginModal">
+<!-- ================= LOGIN MODAL ================= -->
+
+<div
+  class="modal-overlay"
+  id="loginModal"
+>
+
 
   <div class="login-modal">
 
-    <button class="modal-close" id="closeLogin">✕</button>
 
-    <p class="eyebrow">WELCOME BACK</p>
+    <button
+      class="modal-close"
+      id="closeLogin"
+    >
+      ✕
+    </button>
+
+
+    <p class="eyebrow">
+      WELCOME BACK
+    </p>
+
 
     <h2>
       Login to <em>Riwaayat</em>
     </h2>
 
+
     <form id="loginForm">
+
 
       <input
         type="email"
@@ -942,49 +1602,77 @@
         required
       >
 
+
       <input
         type="password"
         placeholder="Password"
         required
       >
 
-      <button type="submit" class="btn btn-primary full">
+
+      <button
+        type="submit"
+        class="btn btn-primary full"
+      >
         Login
       </button>
 
+
     </form>
+
 
   </div>
 
 </div>
 
 
-<div class="toast" id="toast">
+
+<!-- ================= TOAST ================= -->
+
+<div
+  class="toast"
+  id="toast"
+>
   Added to cart ✓
 </div>
 
 
-<!-- FOOTER -->
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
+
   <div class="container footer-inner">
 
+
     <div class="logo">
-      <span>RIWAĀYAT</span>
-      <small>FINE FOOD • FINE MOMENTS</small>
+
+      <span>
+        RIWAĀYAT
+      </span>
+
+      <small>
+        FINE FOOD • FINE MOMENTS
+      </small>
+
     </div>
+
 
     <p>
       © 2026 Riwaayat. Crafted with love.
     </p>
+
 
   </div>
 
 </footer>
 
 
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
