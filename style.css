@@ -440,7 +440,7 @@ a {
 
 
 .hero-image img {
-  position: relative;
+  position: center;
   z-index: 2;
 
   width: 100%;
@@ -448,7 +448,7 @@ a {
 
   height: 610px;
 
-  object-fit: cover;
+  object-fit: contain;
 
   border-radius: 35px 0 0 35px;
 
