@@ -405,7 +405,7 @@ button {
   object-fit: contain;
   object-position: center center;
 
-  border-radius: 32px;
+  border-radius: 50px;
 
   /* NO SCALE */
   transform: none !important;
