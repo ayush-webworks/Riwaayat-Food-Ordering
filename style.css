@@ -1531,3 +1531,193 @@ footer {
   }
 
 }
+
+/* =========================================================
+   MENU CARDS — STAGGER ANIMATION
+   ========================================================= */
+
+.food-grid .food-card {
+  opacity: 0;
+  transform: translateY(45px) scale(0.96);
+
+  animation: menuCardReveal 0.7s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+/* One-by-one delay */
+
+.food-grid .food-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.food-grid .food-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.food-grid .food-card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.food-grid .food-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.food-grid .food-card:nth-child(5) {
+  animation-delay: 0.33s;
+}
+
+.food-grid .food-card:nth-child(6) {
+  animation-delay: 0.40s;
+}
+
+.food-grid .food-card:nth-child(7) {
+  animation-delay: 0.47s;
+}
+
+.food-grid .food-card:nth-child(8) {
+  animation-delay: 0.54s;
+}
+
+.food-grid .food-card:nth-child(9) {
+  animation-delay: 0.61s;
+}
+
+.food-grid .food-card:nth-child(10) {
+  animation-delay: 0.68s;
+}
+
+.food-grid .food-card:nth-child(11) {
+  animation-delay: 0.75s;
+}
+
+.food-grid .food-card:nth-child(12) {
+  animation-delay: 0.82s;
+}
+
+.food-grid .food-card:nth-child(13) {
+  animation-delay: 0.89s;
+}
+
+.food-grid .food-card:nth-child(14) {
+  animation-delay: 0.96s;
+}
+
+.food-grid .food-card:nth-child(15) {
+  animation-delay: 1.03s;
+}
+
+.food-grid .food-card:nth-child(16) {
+  animation-delay: 1.10s;
+}
+
+.food-grid .food-card:nth-child(17) {
+  animation-delay: 1.17s;
+}
+
+.food-grid .food-card:nth-child(18) {
+  animation-delay: 1.24s;
+}
+
+
+@keyframes menuCardReveal {
+
+  0% {
+    opacity: 0;
+    transform: translateY(45px) scale(0.96);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   CARD HOVER — EXTRA PREMIUM EFFECT
+   ========================================================= */
+
+.food-card {
+  transform-origin: center;
+}
+
+.food-card:hover {
+  transform: translateY(-10px) scale(1.015);
+}
+
+
+/* Image smooth reveal */
+
+.food-card .food-real-image {
+  transform: scale(1.02);
+  transition:
+    transform 0.8s cubic-bezier(.2,.8,.2,1),
+    filter 0.5s ease;
+}
+
+.food-card:hover .food-real-image {
+  transform: scale(1.09);
+}
+
+
+/* =========================================================
+   GOLD SHINE EFFECT
+   ========================================================= */
+
+.food-card::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  pointer-events: none;
+  z-index: 5;
+}
+
+.food-card:hover::after {
+  animation: cardShine 0.8s ease;
+}
+
+@keyframes cardShine {
+
+  from {
+    left: -120%;
+  }
+
+  to {
+    left: 150%;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .food-grid .food-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+}
