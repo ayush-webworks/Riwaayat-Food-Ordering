@@ -413,9 +413,9 @@ a {
 .hero-image {
   position: relative;
 
-  height: 620px;
+  height: 610px;
 
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
 }
@@ -426,8 +426,8 @@ a {
 
   position: absolute;
 
-  width: 560px;
-  height: 560px;
+  width: 100px;
+  height: 100px;
 
   border-radius: 50%;
 
@@ -440,15 +440,15 @@ a {
 
 
 .hero-image img {
-  position: center;
+  position: 65% center;
   z-index: 2;
 
   width: 100%;
   max-width: 760px;
 
-  height: 610px;
+  height: 100px;
 
-  object-fit: contain;
+  object-fit: cover;
 
   border-radius: 35px 0 0 35px;
 
