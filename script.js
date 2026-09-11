@@ -622,3 +622,64 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCart();
 
 });
+/* ================= MOBILE HAMBURGER MENU ================= */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuToggle && navLinks) {
+
+  menuToggle.addEventListener("click", function () {
+
+    navLinks.classList.toggle("active");
+    menuToggle.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+
+    // Change hamburger icon
+    if (navLinks.classList.contains("active")) {
+      menuToggle.textContent = "✕";
+    } else {
+      menuToggle.textContent = "☰";
+    }
+
+  });
+
+
+  // Close menu when clicking any navigation link
+
+  navLinks.querySelectorAll("a").forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+      navLinks.classList.remove("active");
+      menuToggle.classList.remove("active");
+      document.body.classList.remove("menu-open");
+
+      menuToggle.textContent = "☰";
+
+    });
+
+  });
+
+
+  // Close menu when clicking outside
+
+  document.addEventListener("click", function (event) {
+
+    if (
+      navLinks.classList.contains("active") &&
+      !navLinks.contains(event.target) &&
+      !menuToggle.contains(event.target)
+    ) {
+
+      navLinks.classList.remove("active");
+      menuToggle.classList.remove("active");
+      document.body.classList.remove("menu-open");
+
+      menuToggle.textContent = "☰";
+
+    }
+
+  });
+
+}
