@@ -683,3 +683,81 @@ if (menuToggle && navLinks) {
   });
 
 }
+/* =========================================================
+   PREMIUM CURSOR
+   ========================================================= */
+
+if (window.innerWidth > 768) {
+
+  const cursorDot = document.createElement("div");
+  const cursorRing = document.createElement("div");
+
+  cursorDot.className = "cursor-dot";
+  cursorRing.className = "cursor-ring";
+
+  document.body.appendChild(cursorDot);
+  document.body.appendChild(cursorRing);
+
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+
+  let ringX = mouseX;
+  let ringY = mouseY;
+
+
+  document.addEventListener("mousemove", (e) => {
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursorDot.style.left = mouseX + "px";
+    cursorDot.style.top = mouseY + "px";
+
+  });
+
+
+  /* Smooth outer ring */
+
+  function animateCursor() {
+
+    ringX += (mouseX - ringX) * 0.14;
+    ringY += (mouseY - ringY) * 0.14;
+
+    cursorRing.style.left = ringX + "px";
+    cursorRing.style.top = ringY + "px";
+
+    requestAnimationFrame(animateCursor);
+
+  }
+
+  animateCursor();
+
+
+  /* Interactive elements */
+
+  const interactiveElements = document.querySelectorAll(
+    "a, button, input, .food-card"
+  );
+
+
+  interactiveElements.forEach((element) => {
+
+    element.addEventListener("mouseenter", () => {
+
+      cursorRing.classList.add("hover");
+      cursorDot.classList.add("hover");
+
+    });
+
+
+    element.addEventListener("mouseleave", () => {
+
+      cursorRing.classList.remove("hover");
+      cursorDot.classList.remove("hover");
+
+    });
+
+  });
+
+}
